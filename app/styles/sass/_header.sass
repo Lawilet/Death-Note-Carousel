@@ -1,0 +1,173 @@
+.showcase
+  height: 100%
+  background-color: black
+  color: white
+  height: 100%
+  overflow: hidden
+  position: relative
+  &::before
+    content: ''
+    width: 100%
+    height: 100%
+    position: absolute
+    z-index: 1
+    box-shadow: inset 0 0 500px #000  
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background-image: url(../images/dist/light.png)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center -65px
+    animation: k-light 3s ease-in-out infinite
+  &__video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    opacity: .5
+  &__content-wrapper
+    position: relative
+    z-index: 2
+    height: 100%
+    padding: 120px 0px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-image: url(../images/dist/glow.png)
+      background-position: center
+      background-repeat: no-repeat
+      background-size: cover
+      animation: k-glow 1.8s ease-in-out infinite
+  &__header
+    position: absolute
+    text-align: center
+    width: 100% 
+    z-index: 1
+    top: 40px
+    font-family: death-note
+    font-size: 60px
+    color: rgba(255, 255, 255, 75)
+    span
+      color: orange
+.showcase-carousel
+  &__item
+    position: relative
+    height: calc(100vh - 120px * 2)
+    text-align: center
+    opacity: .25
+    transform: scale(.75)
+    transition: opacity 1.8s $transition, transform 1.8s $transition
+    &::after
+      content: ''
+      width: 120px
+      height: 0
+      position: absolute
+      box-shadow: 0 0 45px 10px #010101
+      bottom: 5px
+      left: calc( 50% - 60px )
+  p
+    position: absolute
+    bottom: -60px
+    width: 100%
+    font-family: death-note
+    font-size: 60px
+    color: white
+  &__image
+    position: absolute
+    width: 100%
+    height: 100%
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+  &__image-wrapper > *
+    position: absolute
+    width: 100%
+    height: 100%
+    perspective: 150px
+    transform-style: preserve-3d
+  &__image-left
+    perspective-origin: left center
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%)
+    animation: k-left-side 2s ease-in-out infinite
+    animation-direction: alternate
+  &__image-right
+    perspective-origin: right center
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%)
+    animation: k-right-side 2s ease-in-out infinite
+    animation-direction: alternate
+.swiper-slide-active
+  opacity: .8
+  transform: scale(.95)
+.showcase-navigation
+  overflow: hidden
+  position: absolute
+  z-index: 2
+  top: 0
+  left: 0 
+  right: 0
+  bottom: 0
+  &__prev
+    position: absolute
+    height: 100%
+    width: 50%
+    outline: none
+    cursor: pointer
+    left: 30px
+    &::before
+      content: '?'
+      font-family: assassin
+      position: absolute
+      transform: rotate(-90deg)
+      top: 50%
+      font-size: 45px
+  &__next
+    position: absolute
+    height: 100%
+    width: 50%
+    outline: none
+    cursor: pointer
+    right: 0
+    &::after
+      content: '?'
+      font-family: assassin
+      position: absolute
+      transform: rotate(90deg)
+      right: 50px
+      left: auto
+      top: 50%
+      font-size: 45px
+@keyframes k-light
+  0%
+    opacity: .2
+  50%
+    opacity: .3
+  100%
+    opacity: .2
+@keyframes k-glow
+  0%
+    opacity: .6
+  50%
+    opacity: .8
+  100%
+    opacity: .6
+@keyframes k-left-side
+  0%
+    transform: rotateY(-1deg) scaleX(.92)
+  100%
+    transform: rotateY(0deg) scaleX(1)
+@keyframes k-right-side
+  0%
+    transform: rotateY(0deg) scaleX(1)
+  100%
+    transform: rotateY(1deg) scaleX(.92)

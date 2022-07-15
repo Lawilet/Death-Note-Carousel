@@ -1,0 +1,53 @@
+// USER VARIABLES SECTION
+
+$accent: orange // Accent Color
+$fontsize: 14px // Body Font Size
+$textcolor: #333 // Text Color
+$red: #F9423A
+$black: #2A2A2A
+$lineheight: 1.65 // Document Line Height
+$userfont: roboto-oh5, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$transition: .75s cubic-bezier(.075, 0.5, 0, 1)
+$index: calc(1vw + 1vh)
+$gutter-custom: 30px
+$side-small: 26
+$side-big: 36
+$depth: 5500px
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 15px
+$gutter: $grid-gutter-width
+$grid-columns: 12
+$grid-breakpoints: (xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px)
+
+$container-max-widths: (xs: 320px, sm: 350px,md: 720px,lg: 960px,xl: 1140px)
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+@import 'node_modules/swiper/swiper.scss'
+@import 'node_modules/swiper/modules/navigation/navigation.scss'
+@import 'node_modules/swiper/modules/scrollbar/scrollbar.scss'
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+@include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+@include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+@include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+@include font('assassin', normal, 400, '../fonts/assassin.woff2')
+@include font('death-note', normal, 400, '../fonts/deathnote_font.ttf')
+
+
+// GENERAL DOCUMENT STYLES
+
